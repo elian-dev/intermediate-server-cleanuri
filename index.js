@@ -7,7 +7,7 @@ app.use(express.json());
 
 // Setup headers CORS
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*"); // Acces to any origin
+    res.header("Access-Control-Allow-Origin", "https://short-url-api-landing.vercel.app"); // Acces to any origin
     res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
     res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
