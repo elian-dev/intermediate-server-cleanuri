@@ -1,20 +1,23 @@
 {
-  "name": "server-cleanuri",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2",
-    "node-fetch": "^2.7.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  }
+	"name": "server-cleanuri",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"engines": {
+		"node": "14.x"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "node index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2",
+		"node-fetch": "^2.7.0"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.1"
+	}
 }
