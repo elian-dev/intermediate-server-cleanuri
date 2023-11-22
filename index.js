@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.post("/clean-uri", (req, res) => {
+app.post("/api/clean-uri", (req, res) => {
     const cleanUriUrl = "https://cleanuri.com/api/v1/shorten";
 
     fetch(cleanUriUrl, {
