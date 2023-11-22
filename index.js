@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const express = require('express')
 
-const PORT = 9001
+const PORT = process.env.PORT || 9001;
 const app = express()
 app.use(express.json());
 
@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 
 app.post("/clean-uri", (req, res) => {
     const cleanUriUrl = "https://cleanuri.com/api/v1/shorten";
-  
+
     fetch(cleanUriUrl, {
       method: "POST",
       headers: { 
@@ -44,5 +44,14 @@ app.get('/', (req, res) => {
             method: 'POST'
         })
 })
+
+// Handle production
+if (process.env.NODE_ENV === 'production') {
+    // Static folder
+    app.use(express.static(__dirname + '/public/'));
+  
+    // Handle SPA
+    app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
+}
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`))
